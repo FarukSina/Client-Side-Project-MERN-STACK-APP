@@ -1,5 +1,5 @@
 module.exports = router => {
-  require('./routes/people')(router);
+  require('./routes/movie')(router);
 
   return router;
 };
