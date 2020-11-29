@@ -4,11 +4,11 @@ const Movie = (props) => {
   return (
     <tr>
       <td >{props.movie.MovieName}</td>
-      <td>{props.movie.year}</td>
+      <td>{props.movie.year.substring(0,10)}</td>
       <td>{props.movie.genre}</td>
       <td>{props.movie.description}</td>
       <td>
-        <Link to={"/update/" + props.movie._id}  className= "btn btn-primary" >Edit</Link>
+        <Link to={"/edit/" + props.movie._id } className= "btn btn-primary" >Edit</Link>
         <a
           href="#"
           onClick={() => {
