@@ -1,4 +1,9 @@
-import React, { useEffect, useState} from "react";
+/*
+Principal author: IRONMAN
+Sub: Tomoaki Morita (checkValidation)
+*/
+
+import React, { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import history from "../history";
@@ -13,6 +18,8 @@ export default function UpdateMovie(props) {
     genre: "Male",
     description: ""
   });
+
+  const [message, setMessage] = useState('');
 
   useEffect(() => {
     const id = props.match.params.id;
@@ -40,24 +47,44 @@ export default function UpdateMovie(props) {
 
   const onSubmit = (e) => {
     e.preventDefault();
+    if (checkValidation()) {
+      const mov = {
+        MovieName: movie.MovieName,
+        year: movie.year,
+        genre: movie.genre,
+        description: movie.description,
+      };
+      console.log("new person created", mov);
+      editMovie(mov, (res) => {
+        history.push("/");
+      });
+    }
+  }
 
-    const mov = {
-      id: movie.id,
-      MovieName: movie.MovieName,
-      year: movie.year,
-      genre: movie.genre,
-      description: movie.description,
-    };
-    console.log("new movie created", mov);
-    editMovie(mov.id, mov, (res) => {
-    history.push("/");
-    })
-}
+  // do the form validation
+  const checkValidation = () => {
+    console.log('come here validationfdsfdsf');
+    if (movie.MovieName === '') {
+      setMessage('Movie name is blank');
+    } else if (movie.description === '') {
+      setMessage('Discription is blank');
+    } else if (movie.description.length < 10) {
+      setMessage('Discription length must be more than 10');
+    } else {
+      return true;
+    }
+    return false;
+  }
 
   return (
     <div>
       <h3 className="m-3">Update The Movie</h3>
       <form onSubmit={onSubmit}>
+        {message && (
+          <div class="alert alert-danger text-center" role="alert">
+            {message}
+          </div>
+        )}
         <div className={"form-group"}>
           <label>Movie Name:</label>
           <input

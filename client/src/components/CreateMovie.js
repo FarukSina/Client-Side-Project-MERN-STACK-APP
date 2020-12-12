@@ -1,4 +1,9 @@
-import React, { useState} from "react";
+/*
+Principal author: IRONMAN
+Sub: Tomoaki Morita (checkValidation)
+*/
+
+import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import history from "../history";
@@ -12,6 +17,8 @@ export default function CreateMovie() {
     description: ""
   });
 
+  const [message, setMessage] = useState('');
+
   const onChange = (e) => {
     const { value, name } = e.target;
     setMovie({ ...movie, [name]: value });
@@ -23,23 +30,44 @@ export default function CreateMovie() {
 
   const onSubmit = (e) => {
     e.preventDefault();
-
-    const mov = {
-      MovieName: movie.MovieName,
-      year: movie.year,
-      genre: movie.genre,
-      description: movie.description,
-    };
-    console.log("new person created", mov);
-    createMovie(mov, (res) => {
-    history.push("/");
-    })
+    if (checkValidation()) {
+      const mov = {
+        MovieName: movie.MovieName,
+        year: movie.year,
+        genre: movie.genre,
+        description: movie.description,
+      };
+      console.log("new person created", mov);
+      createMovie(mov, (res) => {
+        history.push("/");
+      });
+    }
   };
+
+  // do the form validation
+  const checkValidation = () => {
+    console.log('come here validationfdsfdsf');
+    if (movie.MovieName === '') {
+      setMessage('Movie name is blank');
+    } else if (movie.description === '') {
+      setMessage('Discription is blank');
+    } else if (movie.description.length < 10) {
+      setMessage('Discription length must be more than 10');
+    } else {
+      return true;
+    }
+    return false;
+  }
 
   return (
     <div>
       <h3 className="m-3">Create New Movie</h3>
       <form onSubmit={onSubmit}>
+        {message && (
+          <div class="alert alert-danger text-center" role="alert">
+            {message}
+          </div>
+        )}
         <div className={"form-group"}>
           <label>Movie Name:</label>
           <input
