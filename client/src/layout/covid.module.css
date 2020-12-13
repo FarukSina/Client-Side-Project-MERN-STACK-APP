@@ -1,0 +1,27 @@
+.table {
+  margin-top: "5px";
+  color: burlywood;
+}
+.container h1,
+p {
+  color: #044459 !important;
+}
+.searchText {
+  display: flex;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  margin-bottom: 7.77px;
+}
+
+.searchText input {
+  width: 0 auto;
+  margin-left: 5px;
+}
+
+.searchText label {
+  padding-right: 5px;
+  margin: 0;
+  font-weight: bold;
+  font-size: 16px;
+}

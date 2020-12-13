@@ -50,9 +50,9 @@ export default function CreateMovie() {
     if (movie.MovieName === '') {
       setMessage('Movie name is blank');
     } else if (movie.description === '') {
-      setMessage('Discription is blank');
+      setMessage('Description is blank');
     } else if (movie.description.length < 10) {
-      setMessage('Discription length must be more than 10');
+      setMessage('Description length must be more than 10');
     } else {
       return true;
     }

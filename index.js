@@ -1,3 +1,8 @@
+/*
+Principal author: IRONMAN
+Sub: Tomoaki Morita (checkValidation)
+*/
+
 require('dotenv').config();
 
 const express = require('express');

@@ -1,3 +1,8 @@
+/*
+Principal author: IRONMAN
+Sub: Tomoaki Morita (checkValidation)
+*/
+
 import axios from "axios";
 import { SERVER_URL } from "../links";
 

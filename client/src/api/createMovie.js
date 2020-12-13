@@ -1,4 +1,9 @@
 import Axios from "axios";
+/*
+Principal author: IRONMAN
+Sub: Tomoaki Morita (checkValidation)
+*/
+
 import {SERVER_URL} from "../links"
 export const createMovie = (data, callback) => {
   Axios.post(SERVER_URL + "movie",

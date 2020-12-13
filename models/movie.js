@@ -1,3 +1,8 @@
+/*
+Principal author: IRONMAN
+Sub: Tomoaki Morita (checkValidation)
+*/
+
 const mongoose = require("mongoose");
 
 const MovieSchema = new mongoose.Schema({

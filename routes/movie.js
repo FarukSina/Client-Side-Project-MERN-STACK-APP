@@ -1,3 +1,8 @@
+/*
+Principal author: IRONMAN
+Sub: Tomoaki Morita (checkValidation)
+*/
+
 const { index, show, create, update, destroy } = require('../controllers/movie');
 
 module.exports = router => {

@@ -1,8 +1,13 @@
+/*
+Principal author: Faruk Sina Kaya
+Sub: Tomoaki Morita (checkValidation)
+*/
 import React from 'react'
 import {Link} from "react-router-dom"
+import classes from "./navbar.module.css"
 export default function NavBar() {
     return (
-     <nav className="navbar navbar-expand-lg navbar-light bg-light">
+     <nav className={` ${classes.navbar} navbar navbar-expand-lg navbar-light `}>
   <Link to="/" className="navbar-brand mr-5" >MovieLists</Link>
   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span className="navbar-toggler-icon"></span>
@@ -15,6 +20,9 @@ export default function NavBar() {
       </li>
       <li className="nav-item active">
         <Link to="/create" className="nav-link" >Create</Link>
+      </li>
+      <li className="nav-item active">
+        <Link to="/covid" className="nav-link" >Covid</Link>
       </li>
       {/* <li className="nav-item dropdown">
         <Link className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

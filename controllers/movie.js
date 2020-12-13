@@ -1,3 +1,8 @@
+/*
+Principal author: IRONMAN
+Sub: Tomoaki Morita (checkValidation)
+*/
+
 const Movie = require('../models/movie');
 
 exports.index = async (req, res, next) => {

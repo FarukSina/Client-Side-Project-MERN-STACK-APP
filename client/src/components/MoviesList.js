@@ -1,3 +1,8 @@
+/*
+Principal author: IRONMAN
+Sub: Tomoaki Morita (checkValidation)
+*/
+
 import React,{useState,useEffect} from 'react'
 import {getMovies} from "../api/getMovies"
 import Movie from "./Movie"

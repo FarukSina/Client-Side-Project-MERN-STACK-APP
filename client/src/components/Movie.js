@@ -1,3 +1,8 @@
+/*
+Principal author: IRONMAN
+Sub: Tomoaki Morita (checkValidation)
+*/
+
 import React from "react";
 import { Link } from "react-router-dom";
 const Movie = (props) => {
