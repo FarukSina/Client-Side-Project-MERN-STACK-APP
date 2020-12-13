@@ -1,6 +1,6 @@
 /*
-Principal author: IRONMAN
-Sub: Tomoaki Morita (checkValidation)
+Principal author: Faruk Sina Kaya
+Sub: Tomoaki Morita
 */
 
 const { index, show, create, update, destroy } = require('../controllers/movie');

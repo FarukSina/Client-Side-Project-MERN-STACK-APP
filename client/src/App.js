@@ -5,7 +5,7 @@ import Covid from "./components/Covid"
 import UpdateMovie from "./components/UpdateMovie"
 /*
 Principal author: Faruk Sina Kaya
-Sub: Tomoaki Morita (checkValidation)
+Sub: Tomoaki Morita
 */
 
 import {Router, Switch, Route} from "react-router-dom"
@@ -23,7 +23,7 @@ function App() {
         <Route path="/edit/:id" component={UpdateMovie}></Route>
         <Route path="/covid" component={Covid}></Route>
         </Switch>
-      </div>
+      </div>  
       </Router>
     </div>
   );

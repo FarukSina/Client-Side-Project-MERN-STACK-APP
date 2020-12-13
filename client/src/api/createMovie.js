@@ -1,6 +1,6 @@
 import Axios from "axios";
 /*
-Principal author: IRONMAN
+Principal author: Faruk Sina Kaya
 Sub: Tomoaki Morita (checkValidation)
 */
 

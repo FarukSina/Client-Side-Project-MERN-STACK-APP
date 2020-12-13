@@ -1,13 +1,8 @@
+
 /*
-Principal author: IRONMAN
+Principal author: Faruk Sina Kaya
 Sub: Tomoaki Morita (checkValidation)
 */
-/*
-Principal author: IRONMAN
-Sub: Tomoaki Morita (checkValidation)
-*/
-
-
 import React, { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
