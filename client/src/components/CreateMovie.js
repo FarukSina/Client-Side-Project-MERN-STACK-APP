@@ -2,18 +2,20 @@
 Principal author: Faruk Sina Kaya
 Sub: Tomoaki Morita (checkValidation)
 */
-
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import history from "../history";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {createMovie} from "../api/createMovie"
+import {NotificationContext} from "../Notifications"
 export default function CreateMovie() {
+
+  const { setNotification } = useContext(NotificationContext);
   const [movie, setMovie] = useState({
     MovieName: "",
     year: new Date(),
-    genre: "Male",
+    genre: "Romantic",
     description: ""
   });
 
@@ -37,8 +39,12 @@ export default function CreateMovie() {
         genre: movie.genre,
         description: movie.description,
       };
-      console.log("new person created", mov);
+      console.log("new movie created", mov);
       createMovie(mov, (res) => {
+        setNotification({
+          type: "success",
+          message: "Movie Created Successfully!"
+        });
         history.push("/");
       });
     }
@@ -123,7 +129,7 @@ export default function CreateMovie() {
         <div className="form-group">
           <input
             type="submit"
-            value="Create Person"
+            value="Create a Movie"
             className="btn btn-primary"
           />
         </div>

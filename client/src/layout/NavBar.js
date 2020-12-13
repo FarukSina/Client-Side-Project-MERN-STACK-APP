@@ -24,6 +24,9 @@ export default function NavBar() {
       <li className="nav-item active">
         <Link to="/covid" className="nav-link" >Covid</Link>
       </li>
+      <li className="nav-item active">
+        <Link to="/books" className="nav-link" >Book List</Link>
+      </li>
       {/* <li className="nav-item dropdown">
         <Link className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Dropdown

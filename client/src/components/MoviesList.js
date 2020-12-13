@@ -3,14 +3,15 @@ Principal author: Faruk Sina Kaya
 Sub: Tomoaki Morita (checkValidation)
 */
 
-import React,{useState,useEffect} from 'react'
+import React,{useState,useEffect,  useContext} from 'react'
 import {getMovies} from "../api/getMovies"
 import Movie from "./Movie"
 import axios from "axios"
 import {SERVER_URL} from "../links"
+import {NotificationContext} from "../Notifications"
 export default function MoviesList() {
     const [movies, setMovies] = useState([])
-
+    const {setNotification} = useContext(NotificationContext)
     useEffect(() => {
        getMovies((value)=>{
            setMovies(value);
@@ -27,6 +28,10 @@ export default function MoviesList() {
           })
           .catch((err) => console.log("Error: " + err));
         setMovies(movies.filter((el) => el._id !== id));
+        setNotification({
+          type: "success",
+          message: "You have deleted the movie successfully"
+        })
         console.log("Movies after delete", movies);
       };
     return (
@@ -54,6 +59,7 @@ export default function MoviesList() {
           })}
         </tbody>
       </table>
+      <p><strong>{`There are ${movies.length} movies in the table`}</strong></p>
     </div>
     )
 }

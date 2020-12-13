@@ -1,0 +1,15 @@
+.Container h1 {
+  color: black;
+  font-size: 1.2em;
+  font-family: Arial, Verdana, sans-serif;
+}
+.Container hr {
+  color: rgb(52, 52, 204);
+  width: thick;
+}
+.Container body {
+  font-size: 12pt;
+  color: brown;
+  font-family: Tahoma, Bodoni, sans-serif;
+  line-height: 0.8em;
+}

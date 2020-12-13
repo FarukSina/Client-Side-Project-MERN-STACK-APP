@@ -3,19 +3,21 @@
 Principal author: Faruk Sina Kaya
 Sub: Tomoaki Morita (checkValidation)
 */
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import history from "../history";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {editMovie} from "../api/editMovie"
 import {getMovie} from "../api/getMovie"
+import {NotificationContext} from "../Notifications"
 export default function UpdateMovie(props) {
+  const {setNotification} = useContext(NotificationContext);
   const [movie, setMovie] = useState({
     id:0,
     MovieName: "",
     year: new Date(),
-    genre: "Male",
+    genre: "Romantic",
     description: ""
   });
 
@@ -54,8 +56,12 @@ export default function UpdateMovie(props) {
         genre: movie.genre,
         description: movie.description,
       };
-      console.log("new person created", mov);
-      editMovie(mov, (res) => {
+      console.log("movie is updated", mov);
+      setNotification({
+        type: "success",
+        message: "Neww movie is updated succesfully"
+      })
+      editMovie(props.match.params.id, mov, setNotification, (res) => {
         history.push("/");
       });
     }
@@ -140,7 +146,7 @@ export default function UpdateMovie(props) {
         <div className="form-group">
           <input
             type="submit"
-            value="Create Person"
+            value="Update a Movie"
             className="btn btn-primary"
           />
         </div>

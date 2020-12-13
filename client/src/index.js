@@ -2,7 +2,6 @@
 Principal author: Faruk Sina Kaya
 Sub: Tomoaki Morita 
 */
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';

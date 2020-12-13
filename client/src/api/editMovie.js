@@ -2,10 +2,9 @@
 Principal author: Faruk Sina Kaya
 Sub: Tomoaki Morita (checkValidation)
 */
-
 import Axios from "axios";
 import {SERVER_URL} from "../links"
-export const editMovie = (id, data, callback) => {
+export const editMovie = (id, data, setNotification, callback) => {
   Axios.post(
     SERVER_URL + "movie/update/" + id,
     data,
@@ -17,5 +16,9 @@ export const editMovie = (id, data, callback) => {
     .catch((err) => {
       callback(err.response.data);
       console.error("error editMovie", err.response);
+      setNotification({
+        type: "danger",
+        message: "Error movie didnt update"
+      })
     });
 };

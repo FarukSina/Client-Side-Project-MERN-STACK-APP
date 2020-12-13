@@ -3,9 +3,12 @@ Principal author: Faruk Sina Kaya
 Sub: Tomoaki Morita (checkValidation)
 */
 
-import React from "react";
+import React, {useContext} from "react";
 import { Link } from "react-router-dom";
+import {NotificationContext} from "../Notifications"
+
 const Movie = (props) => {
+  const {setNotification} = useContext(NotificationContext);
   return (
     <tr>
       <td >{props.movie.MovieName}</td>
@@ -20,7 +23,11 @@ const Movie = (props) => {
             if (window.confirm("Are you sure to delete?")) {
               props.deleteMovie(props.movie._id)
             } else {
-              window.alert = "You did not want to delete";
+              //window.alert = "You did not want to delete";
+              setNotification({
+                type: "warning",
+                message: "You did not want to delete"
+              })
             }
           }}  className="btn btn-danger"
         >
