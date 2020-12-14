@@ -10,11 +10,10 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
-export default function AddMovie({addMovie}) {
+export default function EditMovie({item, editMovie }) {
   const [open, setOpen] = React.useState(false);
-  const [movie, setMovie] = React.useState({ name: '', year: '' });
-  const [name, setName] = React.useState('');
-  const [year, setYear] = React.useState();
+  const [name, setName] = React.useState(item.name);
+  const [year, setYear] = React.useState(item.year);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -26,7 +25,7 @@ export default function AddMovie({addMovie}) {
 
   const handleClose2 = () => {
     setOpen(false);
-    addMovie({ name: name, year: year });
+    editMovie({ id: item.id, name: name, year: year });
   }
 
   const handleChangeOnName = (e) => {
@@ -40,10 +39,10 @@ export default function AddMovie({addMovie}) {
   return (
     <div>
       <Button variant="outlined" color="primary" onClick={handleClickOpen}>
-        Add movie
+        Edit
       </Button>
       <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
-        <DialogTitle id="form-dialog-title">Add</DialogTitle>
+        <DialogTitle id="form-dialog-title">Edit</DialogTitle>
         <DialogContent>
           <TextField
             autoFocus
@@ -52,6 +51,7 @@ export default function AddMovie({addMovie}) {
             label="Movie name"
             type="text"
             fullWidth
+            defaultValue={item.name}
             onChange={handleChangeOnName}
           />
           <TextField
@@ -61,6 +61,7 @@ export default function AddMovie({addMovie}) {
             label="Year"
             type="number"
             fullWidth
+            defaultValue={item.year}
             onChange={handleChangeOnYear}
           />
         </DialogContent>

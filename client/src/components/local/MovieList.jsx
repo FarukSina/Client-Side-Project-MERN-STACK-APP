@@ -35,12 +35,12 @@ const MovieList = () => {
         setMovies(newList);
     }
 
-    const editMovie = (id) => {
+    const editMovie = (item2) => {
         const newList = movies.map(item => {
-            if (item.id !== id) {
+            if (item.id !== item2.id) {
                 return item;
             } else {
-                return { ...item }
+                return { ...item2 }
             }
         });
         setMovies(newList);

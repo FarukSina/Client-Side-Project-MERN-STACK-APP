@@ -12,6 +12,7 @@ import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import { useEffect } from 'react';
+import EditMovie from './EditMovie';
 
 const useStyles = makeStyles((theme) => ({
   inline: {
@@ -51,7 +52,7 @@ const MovieListItem = ({id, item, editMovie, removeMovie}) => {
             <Button onClick={()=> removeMovie(id)}>Delete</Button>
           </Grid>
           <Grid item>
-                <Button onClick={() => handleEditClick(id)}>Edit</Button>
+              <EditMovie item={item} editMovie={editMovie} />
           </Grid>
         </Grid>
       </ListItemSecondaryAction>
