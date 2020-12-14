@@ -4,6 +4,7 @@ import CreateMovie from "./components/CreateMovie"
 import Covid from "./components/Covid"
 import UpdateMovie from "./components/UpdateMovie"
 import Books from "./components/Books"
+import ViewMovie from "./components/ViewMovie.js";
 /*
 Principal author: Faruk Sina Kaya
 Sub: Tomoaki Morita 
@@ -26,6 +27,7 @@ function App() {
         <Route path="/create" component={CreateMovie}></Route>
         <Route path="/edit/:id" component={UpdateMovie}></Route>
         <Route path="/covid" component={Covid}></Route>
+        <Route path="/view/:id" component={ViewMovie}></Route>
         <Route path="/books" component={Books}></Route>
         </Switch>
       </div>  

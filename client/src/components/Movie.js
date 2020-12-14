@@ -34,6 +34,7 @@ const Movie = (props) => {
         >
           Delete
         </a>
+        <Link to={"/view/" + props.movie._id} className="btn btn-secondary">View</Link>
       </td>
     </tr>
   );
