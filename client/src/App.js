@@ -5,6 +5,7 @@ import Covid from "./components/Covid"
 import UpdateMovie from "./components/UpdateMovie"
 import Books from "./components/Books"
 import ViewMovie from "./components/ViewMovie.js";
+import MovieList from "./components/local/MovieList";
 /*
 Principal author: Faruk Sina Kaya
 Sub: Tomoaki Morita 
@@ -29,6 +30,7 @@ function App() {
         <Route path="/covid" component={Covid}></Route>
         <Route path="/view/:id" component={ViewMovie}></Route>
         <Route path="/books" component={Books}></Route>
+        <Route path="/for-local" component={MovieList}></Route>
         </Switch>
       </div>  
       </Router>
