@@ -1,6 +1,8 @@
 /*
 Principal author: Faruk Sina Kaya
-Sub: Tomoaki Morita (checkValidation)
+Sub: Tomoaki Morita 
+Sub: Parthkumar Patel
+Sub: Burak Akcal
 */
 import Axios from "axios";
 import {SERVER_URL} from "../links"

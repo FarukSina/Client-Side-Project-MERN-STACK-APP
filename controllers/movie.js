@@ -1,6 +1,8 @@
 /*
 Principal author: Faruk Sina Kaya
 Sub: Tomoaki Morita 
+Sub: Parthkumar Patel
+Sub: Burak Akcal
 */
 
 const Movie = require('../models/movie');

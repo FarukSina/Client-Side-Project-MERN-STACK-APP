@@ -1,8 +1,9 @@
 /*
 Principal author: Faruk Sina Kaya
-Sub: Tomoaki Morita (checkValidation)
+Sub: Tomoaki Morita 
+Sub: Parthkumar Patel
+Sub: Burak Akcal
 */
-
 import React, {useContext} from "react";
 import { Link } from "react-router-dom";
 import {NotificationContext} from "../Notifications"

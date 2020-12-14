@@ -1,3 +1,10 @@
+/*
+Principal author: made by Parthkumar Patel
+Sub: Faruk Sina Kaya
+Sub: Tomoaki Morita 
+Sub: Burak Akcal
+*/
+
 import React from 'react'
 import { Container } from 'react-bootstrap';
 import classes from "../layout/books.module.css"

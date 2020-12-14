@@ -1,9 +1,10 @@
 import Axios from "axios";
 /*
 Principal author: Faruk Sina Kaya
-Sub: Tomoaki Morita (checkValidation)
+Sub: Tomoaki Morita 
+Sub: Parthkumar Patel
+Sub: Burak Akcal
 */
-
 import {SERVER_URL} from "../links"
 export const createMovie = (data, callback) => {
   Axios.post(SERVER_URL + "movie",

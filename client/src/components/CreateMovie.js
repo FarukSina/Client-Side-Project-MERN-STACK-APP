@@ -1,6 +1,6 @@
 /*
 Principal author: Faruk Sina Kaya
-Sub: Tomoaki Morita (checkValidation)
+Sub: added by Tomoaki Morita (checkValidation)
 */
 import React, { useState, useContext } from "react";
 import DatePicker from "react-datepicker";

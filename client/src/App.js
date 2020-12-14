@@ -6,7 +6,9 @@ import UpdateMovie from "./components/UpdateMovie"
 import Books from "./components/Books"
 /*
 Principal author: Faruk Sina Kaya
-Sub: Tomoaki Morita
+Sub: Tomoaki Morita 
+Sub: Parthkumar Patel
+Sub: Burak Akcal
 */
 import NotificationProvider from './Notifications/index';
 import {Router, Switch, Route} from "react-router-dom"
